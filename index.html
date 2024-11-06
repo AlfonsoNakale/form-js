@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Booking Form</title>
+    <title>Car Rental Booking Form</title>
   </head>
   <body>
-    <form id="booking_form">
-      <!-- Your form fields will go here -->
-    </form>
+    <!-- Webflow elements will be injected here -->
+    <div id="booking_form">
+      <!-- Webflow will inject the form here -->
+    </div>
 
     <!-- Alert containers -->
     <div class="error-alert-bg is-hidden">
@@ -19,6 +20,7 @@
       <div class="success-alert-text"></div>
     </div>
 
-    <script src="./src/main.js"></script>
+    <!-- Important: Add type="module" -->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
