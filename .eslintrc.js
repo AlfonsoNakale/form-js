@@ -1,25 +1,16 @@
-module.exports = {
+export default {
+  root: true,
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
-  extends: ['eslint:recommended', 'plugin:import/recommended'],
-  plugins: ['import'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
   rules: {
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal'],
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-      },
-    ],
-    'no-unused-vars': 'warn',
+    'prettier/prettier': 'error',
   },
 }
