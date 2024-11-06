@@ -1,8 +1,10 @@
-node_modules
-.DS_Store
-dist
+# Generated files
 dist-ssr
 *.local
-.env
+
+# Dependency directories
+node_modules
+.DS_Store
+*.env
 .eslintcache
 yarn-error.log
