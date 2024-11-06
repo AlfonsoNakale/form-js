@@ -8,13 +8,6 @@ import {
   populateCountrySelect,
 } from './modules/index.js'
 
-import './modules/extras.js'
-import './modules/apiExchange.js'
-import './modules/calculations.js'
-import './modules/apiChoice.js'
-import './modules/datePickers.js'
-import './modules/vehicleSelection.js'
-
 const initializeBookingForm = async () => {
   try {
     const form = document.querySelector('#booking_form')
@@ -96,5 +89,3 @@ const showSuccess = (message) => {
 }
 
 initializeBookingForm()
-
-alert('Hello World')

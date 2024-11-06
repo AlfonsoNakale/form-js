@@ -1,23 +1,6 @@
-export const initializeDatePickers = () => {
-  // Implementation here
-}
-
-export const initializeVehicleSelection = () => {
-  // Implementation here
-}
-
-export const initializeExtras = () => {
-  // Implementation here
-}
-
-export const initializeCurrencyToggle = () => {
-  // Implementation here
-}
-
-export const calculateTotals = () => {
-  // Implementation here
-}
-
-export const populateCountrySelect = async () => {
-  // Implementation here
-}
+export { initializeDatePickers } from './datePickers.js'
+export { initializeVehicleSelection } from './vehicleSelection.js'
+export { initializeExtras } from './extras.js'
+export { initializeCurrencyToggle } from './apiExchange.js'
+export { calculateTotals } from './calculations.js'
+export { populateCountrySelect } from './apiChoice.js'
