@@ -96,5 +96,3 @@ const showSuccess = (message) => {
 }
 
 initializeBookingForm()
-
-//alert('Hello World')
