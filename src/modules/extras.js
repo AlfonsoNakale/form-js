@@ -1,111 +1,111 @@
-import { calculateTotals } from "./calculations";
+import { calculateTotals } from './calculations'
 
 // Optimized EXTRAS array with proper mapping
 const EXTRAS = [
   {
     id: 1,
-    name: "NAD-45-000.00-Excess-Waiver",
+    name: 'NAD-45-000.00-Excess-Waiver',
     baseFee: 45000,
     perDay: false,
-    displayName: "NAD 45,000.00 Excess Waiver",
+    displayName: 'NAD 45,000.00 Excess Waiver',
   },
   {
     id: 2,
-    name: "Tyre-Glass-Waiver",
+    name: 'Tyre-Glass-Waiver',
     baseFee: 165,
     perDay: true,
-    displayName: "Tyre & Glass Waiver @ 165.00 p.d",
+    displayName: 'Tyre & Glass Waiver @ 165.00 p.d',
   },
   {
     id: 3,
-    name: "Cross-Border-Charge",
+    name: 'Cross-Border-Charge',
     baseFee: 100,
     perDay: false,
-    displayName: "Cross Border Charge @ 100.00",
+    displayName: 'Cross Border Charge @ 100.00',
   },
   {
     id: 4,
-    name: "Satellite-Phone-N-6000-Excess",
+    name: 'Satellite-Phone-N-6000-Excess',
     baseFee: 140,
     perDay: true,
-    displayName: "Satellite Phone (N$6000 Excess) @ 140.00 p.d",
+    displayName: 'Satellite Phone (N$6000 Excess) @ 140.00 p.d',
   },
   {
     id: 5,
-    name: "Satellite-Phone-Zero-Excess",
+    name: 'Satellite-Phone-Zero-Excess',
     baseFee: 170,
     perDay: true,
-    displayName: "Satellite Phone (Zero Excess) @ 170.00 p.d",
+    displayName: 'Satellite Phone (Zero Excess) @ 170.00 p.d',
   },
   {
     id: 6,
-    name: "Camping-Equipment---Double-Cab",
+    name: 'Camping-Equipment---Double-Cab',
     baseFee: 170,
     perDay: true,
-    displayName: "Camping Equipment - Double Cab @ NAD 170.00 p.d",
+    displayName: 'Camping Equipment - Double Cab @ NAD 170.00 p.d',
   },
   {
     id: 7,
-    name: "Roof-Tents-Required",
+    name: 'Roof-Tents-Required',
     baseFee: 60,
     perDay: true,
-    displayName: "Roof Tents Required @ NAD 60.00 p.d",
+    displayName: 'Roof Tents Required @ NAD 60.00 p.d',
   },
   {
     id: 8,
-    name: "Engel-40L-Fridge-Freezer",
+    name: 'Engel-40L-Fridge-Freezer',
     baseFee: 90,
     perDay: true,
-    displayName: "Engel 40L Fridge/Freezer @ 90.00 p.d",
+    displayName: 'Engel 40L Fridge/Freezer @ 90.00 p.d',
   },
   {
     id: 9,
-    name: "Bedding-incl.-1x-sleeping-bag-1x-pillow",
+    name: 'Bedding-incl.-1x-sleeping-bag-1x-pillow',
     baseFee: 20,
     perDay: true,
-    displayName: "Bedding (incl. 1x sleeping bag + 1x pillow) @ 20.00 p.d",
+    displayName: 'Bedding (incl. 1x sleeping bag + 1x pillow) @ 20.00 p.d',
   },
   {
     id: 10,
-    name: "GPS-System",
+    name: 'GPS-System',
     baseFee: 75,
     perDay: true,
-    displayName: "GPS System @ 75.00 p.d",
+    displayName: 'GPS System @ 75.00 p.d',
   },
   {
     id: 11,
-    name: "SAT-Phone-Minutes",
+    name: 'SAT-Phone-Minutes',
     baseFee: 825,
     perDay: false,
-    displayName: "SAT Phone Minutes @ 825.00 once.off",
+    displayName: 'SAT Phone Minutes @ 825.00 once.off',
   },
   {
     id: 12,
-    name: "Kitchen-wash-up-kit-small-dish-wash-liquid-2x-drying-cloth-2x-sponge-2x-cleaning-cloth-extras",
+    name: 'Kitchen-wash-up-kit-small-dish-wash-liquid-2x-drying-cloth-2x-sponge-2x-cleaning-cloth-extras',
     baseFee: 150,
     perDay: false,
-    displayName: "Kitchen wash up kit @ 150.00 once.off",
+    displayName: 'Kitchen wash up kit @ 150.00 once.off',
   },
   {
     id: 13,
-    name: "Ground-Tent",
+    name: 'Ground-Tent',
     baseFee: 0,
     perDay: false,
-    displayName: "Free Ground Tent",
+    displayName: 'Free Ground Tent',
   },
   {
     id: 14,
-    name: "Jerry-Can",
+    name: 'Jerry-Can',
     baseFee: 10,
     perDay: true,
-    displayName: "Jerry Can @ 10.00 p.d",
+    displayName: 'Jerry Can @ 10.00 p.d',
   },
   {
     id: 15,
-    name: "Baby-Seat",
+    name: 'Baby-Seat',
     baseFee: 0,
     perDay: false,
-    displayName: "Free Baby Seat",
+    displayName: 'Free Baby Seat',
   },
 ].map((extra) => ({
   ...extra,
@@ -119,103 +119,103 @@ const EXTRAS = [
       checkbox: document.querySelector(`#${this.inputId}`),
       quantity: document.querySelector(`#${this.countId}`),
       display: document.querySelector(`#${this.displayId}`),
-    };
+    }
   },
   isValid() {
-    const elements = this.getElements();
-    return elements.checkbox && elements.quantity && elements.display;
+    const elements = this.getElements()
+    return elements.checkbox && elements.quantity && elements.display
   },
-}));
+}))
 
 const updateExtraCalculation = (extraId) => {
-  const extra = EXTRAS.find((e) => e.id === extraId);
-  if (!extra || !extra.isValid()) return;
+  const extra = EXTRAS.find((e) => e.id === extraId)
+  if (!extra || !extra.isValid()) return
 
-  const elements = extra.getElements();
-  const quantity = parseInt(elements.quantity.value) || 0;
+  const elements = extra.getElements()
+  const quantity = parseInt(elements.quantity.value) || 0
   const duration =
-    parseInt(document.querySelector("#v-calc-duration")?.textContent) || 0;
+    parseInt(document.querySelector('#v-calc-duration')?.textContent) || 0
 
   const cost = extra.perDay
     ? extra.baseFee * quantity * duration
-    : extra.baseFee * quantity;
+    : extra.baseFee * quantity
 
-  elements.display.textContent = cost.toFixed(2);
+  elements.display.textContent = cost.toFixed(2)
 
   // Update total extras after individual calculation
-  updateExtrasTotal();
-};
+  updateExtrasTotal()
+}
 
 // New function to update extras total display
 const updateExtrasTotal = () => {
-  const totalElement = document.querySelector("#v-calc-total-extra");
-  if (!totalElement) return;
+  const totalElement = document.querySelector('#v-calc-total-extra')
+  if (!totalElement) return
 
   const total = EXTRAS.reduce((sum, extra) => {
-    if (!extra.isValid()) return sum;
+    if (!extra.isValid()) return sum
 
-    const elements = extra.getElements();
-    if (!elements.checkbox.checked || elements.display.textContent === "-") {
-      return sum;
+    const elements = extra.getElements()
+    if (!elements.checkbox.checked || elements.display.textContent === '-') {
+      return sum
     }
 
-    return sum + parseFloat(elements.display.textContent || "0");
-  }, 0);
+    return sum + parseFloat(elements.display.textContent || '0')
+  }, 0)
 
-  totalElement.textContent = total.toFixed(2);
-};
+  totalElement.textContent = total.toFixed(2)
+}
 
 export const calculateExtrasTotal = () => {
   const total = EXTRAS.reduce((sum, extra) => {
-    if (!extra.isValid()) return sum;
+    if (!extra.isValid()) return sum
 
-    const elements = extra.getElements();
-    if (!elements.checkbox.checked || elements.display.textContent === "-") {
-      return sum;
+    const elements = extra.getElements()
+    if (!elements.checkbox.checked || elements.display.textContent === '-') {
+      return sum
     }
 
-    return sum + parseFloat(elements.display.textContent || "0");
-  }, 0);
+    return sum + parseFloat(elements.display.textContent || '0')
+  }, 0)
 
   // Update the display element
-  const totalElement = document.querySelector("#v-calc-total-extra");
+  const totalElement = document.querySelector('#v-calc-total-extra')
   if (totalElement) {
-    totalElement.textContent = total.toFixed(2);
+    totalElement.textContent = total.toFixed(2)
   }
 
-  return total;
-};
+  return total
+}
 
 export const initializeExtras = () => {
   EXTRAS.forEach((extra) => {
-    if (!extra.isValid()) return;
+    if (!extra.isValid()) return
 
-    const elements = extra.getElements();
+    const elements = extra.getElements()
 
-    elements.checkbox.addEventListener("change", () => {
+    elements.checkbox.addEventListener('change', () => {
       if (elements.checkbox.checked) {
-        elements.quantity.value = elements.quantity.value || "1";
-        updateExtraCalculation(extra.id);
+        elements.quantity.value = elements.quantity.value || '1'
+        updateExtraCalculation(extra.id)
       } else {
-        elements.quantity.value = "";
-        elements.display.textContent = "-";
-        updateExtrasTotal();
+        elements.quantity.value = ''
+        elements.display.textContent = '-'
+        updateExtrasTotal()
       }
-      calculateTotals();
-    });
+      calculateTotals()
+    })
 
-    elements.quantity.addEventListener("change", () => {
+    elements.quantity.addEventListener('change', () => {
       if (elements.checkbox.checked) {
-        updateExtraCalculation(extra.id);
-        calculateTotals();
+        updateExtraCalculation(extra.id)
+        calculateTotals()
       }
-    });
-  });
+    })
+  })
 
-  updateExtrasTotal();
-};
+  updateExtrasTotal()
+}
 
 export const getExtraPrice = (extraName) => {
-  const extra = EXTRAS.find((e) => e.name === extraName);
-  return extra ? extra.baseFee : 0;
-};
+  const extra = EXTRAS.find((e) => e.name === extraName)
+  return extra ? extra.baseFee : 0
+}
